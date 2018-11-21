@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_libraries_playground/di/injector.dart';
 import 'package:flutter_libraries_playground/movies/view/movies_list.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  configureInjector();
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
