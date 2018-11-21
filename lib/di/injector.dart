@@ -16,6 +16,6 @@ void configureInjector() {
   injector.configure();
 }
 
-T inject<T>([String name]) {
+T inject<T>() {
   return kiwi.Container().resolve<T>();
 }
