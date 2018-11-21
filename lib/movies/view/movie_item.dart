@@ -1,4 +1,4 @@
-import 'package:flutter_libraries_playground/movies/model/movie.dart.dart';
+import 'package:flutter_libraries_playground/movies/model/data/movie.dart';
 
 class MovieItem {
   final String name;
@@ -8,5 +8,5 @@ class MovieItem {
 }
 
 MovieItem fromMovie(Movie movie) {
-  return MovieItem(name: movie.title, thumbUrl: "");
+  return MovieItem(name: movie.title, thumbUrl: movie.imagePath());
 }

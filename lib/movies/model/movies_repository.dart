@@ -1,4 +1,4 @@
-import 'package:flutter_libraries_playground/movies/model/movie.dart.dart';
+import 'package:flutter_libraries_playground/movies/model/data/movie.dart';
 
 class MoviesRepository {
 

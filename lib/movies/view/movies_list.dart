@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_libraries_playground/di/injector.dart';
-import 'package:flutter_libraries_playground/movies/model/movie.dart.dart';
+import 'package:flutter_libraries_playground/movies/model/data/movie.dart';
 import 'package:flutter_libraries_playground/movies/presentation/movies_bloc.dart';
 import 'package:flutter_libraries_playground/movies/view/movie_item.dart';
 import 'package:flutter_libraries_playground/movies/view/movie_list_item.dart';

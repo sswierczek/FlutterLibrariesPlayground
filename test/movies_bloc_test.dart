@@ -1,4 +1,4 @@
-import 'package:flutter_libraries_playground/movies/model/movie.dart.dart';
+import 'package:flutter_libraries_playground/movies/model/data/movie.dart';
 import 'package:flutter_libraries_playground/movies/presentation/movies_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
