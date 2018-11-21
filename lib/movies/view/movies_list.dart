@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_libraries_playground/movies/model/movie.dart.dart';
+import 'package:flutter_libraries_playground/movies/model/movies_repository.dart';
 import 'package:flutter_libraries_playground/movies/presentation/movies_bloc.dart';
 import 'package:flutter_libraries_playground/movies/view/movie_item.dart';
 
 class MoviesList extends StatelessWidget {
   MoviesList({Key key}) : super(key: key);
 
-  final moviesBloc = MoviesBloc(); // TODO Add DI
+  final moviesBloc = MoviesBloc(MoviesRepository()); // TODO Add DI
 
   @override
   Widget build(BuildContext context) {

@@ -3,10 +3,12 @@ import 'package:flutter_libraries_playground/movies/model/movies_repository.dart
 import 'package:rxdart/rxdart.dart';
 
 class MoviesBloc {
-  final _moviesRepository = MoviesRepository(); // TODO DI
+  Observable<List<Movie>> get movies => _moviesFetcher.stream;
+
+  final MoviesRepository _moviesRepository;
   final _moviesFetcher = BehaviorSubject<List<Movie>>();
 
-  Observable<List<Movie>> get movies => _moviesFetcher.stream;
+  MoviesBloc(this._moviesRepository);
 
   void fetch() async {
     List<Movie> movies = await _moviesRepository.fetchMovies();
