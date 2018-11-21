@@ -4,7 +4,7 @@ import 'package:flutter_libraries_playground/movies/view/movies_list.dart';
 
 void main() {
   configureInjector();
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

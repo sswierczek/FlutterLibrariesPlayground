@@ -14,4 +14,8 @@ class MoviesBloc {
     List<Movie> movies = await _moviesRepository.fetchMovies();
     _moviesFetcher.sink.add(movies);
   }
+
+  void cleanup() {
+    _moviesFetcher.close();
+  }
 }

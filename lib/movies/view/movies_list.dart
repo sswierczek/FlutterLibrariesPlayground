@@ -4,16 +4,27 @@ import 'package:flutter_libraries_playground/di/injector.dart';
 import 'package:flutter_libraries_playground/movies/model/movie.dart.dart';
 import 'package:flutter_libraries_playground/movies/presentation/movies_bloc.dart';
 import 'package:flutter_libraries_playground/movies/view/movie_item.dart';
+import 'package:flutter_libraries_playground/movies/view/movie_list_item.dart';
 
-class MoviesList extends StatelessWidget {
+class MoviesList extends StatefulWidget {
   MoviesList({Key key}) : super(key: key);
 
+  @override
+  MoviesListState createState() {
+    return MoviesListState();
+  }
+}
+
+class MoviesListState extends State<MoviesList> {
   final moviesBloc = inject<MoviesBloc>();
 
   @override
   Widget build(BuildContext context) {
     moviesBloc.fetch();
+    return buildWidget();
+  }
 
+  Widget buildWidget() {
     return Scaffold(
       appBar: AppBar(
         title: Text('Movies'),
@@ -37,7 +48,13 @@ class MoviesList extends StatelessWidget {
         itemCount: snapshot.data.length,
         itemBuilder: (BuildContext context, int index) {
           var movie = snapshot.data[index];
-          return MoviesListItem(movieItem: MovieItem(name: movie.title));
+          return MoviesListItem(movieItem: fromMovie(movie));
         });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    moviesBloc.cleanup();
   }
 }
