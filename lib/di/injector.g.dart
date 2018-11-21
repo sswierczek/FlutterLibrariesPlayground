@@ -9,7 +9,9 @@ part of 'injector.dart';
 class _$Injector extends Injector {
   void configure() {
     final Container container = Container();
-    container.registerSingleton((c) => MoviesRepository());
+    container.registerSingleton((c) => ApiConfig());
+    container.registerSingleton((c) => NetworkClient(c<ApiConfig>()));
+    container.registerSingleton((c) => MoviesRepository(c<NetworkClient>()));
     container.registerFactory((c) => MoviesBloc(c<MoviesRepository>()));
   }
 }
