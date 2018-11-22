@@ -1,6 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter_libraries_playground/movies/model/data/movie.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'dart:convert';
 
 part 'movie_response.g.dart';
 
@@ -18,4 +19,6 @@ class MoviesResponse {
       MoviesResponse.fromJson(json.decode(jsonString));
 
   Map<String, dynamic> toJson() => _$MoviesResponseToJson(this);
+
+  String toJsonString() => json.encode(toJson());
 }

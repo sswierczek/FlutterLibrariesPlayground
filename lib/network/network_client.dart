@@ -12,7 +12,8 @@ class NetworkClient {
     _dio.options.connectTimeout = TIMEOUT_IN_SECONDS;
   }
 
-  Future<Response<String>> fetchSampleMovies() async {
-    return await _dio.get("/sample_movies.json");
+  Future<String> fetchSampleMovies() async {
+    Response<String> response = await _dio.get("/sample_movies.json");
+    return response.data;
   }
 }

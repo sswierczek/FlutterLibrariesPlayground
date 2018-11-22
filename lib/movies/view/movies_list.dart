@@ -48,7 +48,7 @@ class MoviesListState extends State<MoviesList> {
         itemCount: snapshot.data.length,
         itemBuilder: (BuildContext context, int index) {
           var movie = snapshot.data[index];
-          return MoviesListItem(movieItem: fromMovie(movie));
+          return MoviesListItem(movieItem: MovieItem.fromMovie(movie));
         });
   }
 
