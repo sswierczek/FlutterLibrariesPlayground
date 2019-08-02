@@ -19,8 +19,8 @@ class MoviesListItem extends StatelessWidget {
           )),
       leading: _movieImageBox(CachedNetworkImage(
         imageUrl: movieItem.thumbUrl,
-        placeholder: CircularProgressIndicator(),
-        errorWidget: Icon(Icons.error),
+        placeholder: (context, url) => CircularProgressIndicator(),
+        errorWidget: (context, url, error) => Icon(Icons.error),
         fadeOutDuration: Duration(seconds: 1),
         fadeInDuration: Duration(seconds: 3),
       )),
